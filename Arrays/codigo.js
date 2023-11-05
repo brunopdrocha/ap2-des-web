@@ -1,14 +1,62 @@
-const ingrid = atletas [0];
 
 
-    const espaco_nome = document.getElementById('nome');
-    const imagem = document.querySelector('div#container > img');
-    const espaco_descricao = document.querySelector('div#container > p');
-    
-    const preenche =  (atleta) =>{
-    espaco_nome.innerText= ingrid.nome;
-    imagem.src = ingrid.imagem;
-    espaco_descricao.innerText = ingrid.descricao;
+const body = document.body;
+
+const pesquisa = document.createElement('div');
+const texto_pesquisado = document.createElement('input');
+const btn_pesquisar = document.createElement('button');
+
+pesquisa.style.textAlign = 'center';
+
+btn_pesquisar.innerHTML = "Pesquisar";
+btn_pesquisar.onclick = () => {filtrar(texto_pesquisado.value)};
+
+texto_pesquisado.onchange = () => {filtrar(texto_pesquisado.value)};
+
+pesquisa.appendChild(texto_pesquisado);
+pesquisa.appendChild(btn_pesquisar);
+body.appendChild(pesquisa);
+
+const div_container = document.createElement('div');
+div_container.id = 'container';
+body.appendChild(div_container);
+
+const cria_cartao = (entrada) => { 
+
+    const container_atleta = document.createElement('div');
+    container_atleta.style.width = '20rem';
+    container_atleta.style.backgroundColor = '#777777';
+    container_atleta.style.textAlign = 'center';
+    container_atleta.style.margin = 'auto';
+    const titulo = document.createElement('h3');
+    titulo.innerHTML = entrada.nome;
+    const imagem = document.createElement('img');
+    imagem.src = entrada.imagem;
+    imagem.alt = `foto de ${entrada.nome}`;
+    const descricao = document.createElement('p');
+    descricao.innerHTML = entrada.descricao;
+
+    container_atleta.appendChild(titulo);
+    container_atleta.appendChild(imagem);
+    container_atleta.appendChild(descricao);
+
+    div_container.appendChild(container_atleta);
+}
+
+
+const constroi_atletas = (lista_atletas) => {
+    div_container.innerHTML = "";
+    for (const atleta of lista_atletas){
+        cria_cartao(atleta);
     }
+}
 
-    preenche(ingrid)
+const filtrar = (entrada) => {
+    const filtrado = atletas.filter(
+        (ele) => ele.nome.toLowerCase().includes(entrada.toLowerCase())
+    );
+    constroi_atletas(filtrado);
+}
+
+constroi_atletas(atletas);  
+

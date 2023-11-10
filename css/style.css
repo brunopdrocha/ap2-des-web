@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@400;600&display=swap');
+
+body{
+    color: #000000;
+    background-color: rgb(147, 147, 147);
+    text-align: center;
+    font-family: 'Nunito';
+    margin: 0 auto;
+}
+
+h1, h2{
+    position: sticky;
+}
+
+#lista_imagens_feminino, #lista_imagens_masculino{
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    margin: 0 auto;
+}
+
+/* Media Queries */
+
+@media (max-width : 1024px) {
+    #lista_imagens_feminino, #lista_imagens_masculino{
+        width: fit-content;
+        grid-template-columns : 1fr 1fr 1fr ; /* Muda a quantidade de jogadores por fileira para 4 */
+    }
+}
+
+@media (max-width : 720px) {
+    #lista_imagens_feminino, #lista_imagens_masculino{
+        grid-template-columns : 1fr 1fr;  /* Muda a quantidade de jogadores por fileira para 2 */   
+        font-size : 8pt; 
+        
+    }
+}

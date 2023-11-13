@@ -1,30 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elenco</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="js/jogadores2023.js"></script>
-  <script src="js/jodaores.js" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login JS</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100%;
+        }
+
+        form{
+            width: 300px;
+            margin: 200px auto;
+            text-align: center;
+        }
+
+        input{
+            display: block;
+            margin: 10px auto;
+            width: 250px;
+            height: 30px;
+        }
+
+    </style>
+
 </head>
+<body style="background-color: rgb(221, 221, 221) ;">    
 
-<body>
-  <h1 id="inicio">Atletas Botafogo <button id="sair">Sair</button> </h1>
-  
-  <select id="selecao">
-    <option value="todos">Elenco Completo</option>
-    <option value="feminino">Feminino</option>
-    <option value="masculino">Masculino</option>
-  </select>
+    <form>
+        <img src="./logo.png" alt="logo.png">
+        <h3 style="font-family: 'Roboto', sans-serif; font-family: 'Roboto Condensed', sans-serif; font-family: 'Teko', sans-serif;">ATLETAS BOTAFOGO</h3>
+        <h4 style="font-family: 'Roboto', sans-serif; font-family: 'Roboto Condensed', sans-serif; font-family: 'Teko', sans-serif;">Senha = senha</h4>
+        <input type="password" placeholder="Senha" id="senha">
+        <input type="submit" onclick="logar(); return false">
 
-  
+    </form>
 
-  <div id="lista_imagens_feminino"></div>
-  <div id="lista_imagens_masculino"></div>
+
+    <script>
+
+
+        function logar(){
+
+            var senha = document.getElementById('senha').value;
+
+            if( senha == "senha"){
+                alert('Sucesso');
+                location.href = "home.html";
+            }else{
+                alert('Usuario ou senha incorretos');
+            }
+
+        }
+
+    </script>
 
 </body>
-
 </html>

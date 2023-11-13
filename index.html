@@ -9,22 +9,20 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="js/jogadores2023.js"></script>
   <script src="js/jodaores.js" defer></script>
-
 </head>
 
 <body>
-  <select id="selecao" onchange="updateGenderList()">
-    <option value="todos">Todos</option>
+  <h1 id="inicio">Atletas Botafogo <button id="sair">Sair</button> </h1>
+  
+  <select id="selecao">
+    <option value="todos">Elenco Completo</option>
     <option value="feminino">Feminino</option>
     <option value="masculino">Masculino</option>
   </select>
 
-  <h1>Atletas Botafogo</h1>
+  
 
-  <h2>Elenco Feminino</h2>
   <div id="lista_imagens_feminino"></div>
-
-  <h2>Elenco Masculino</h2>
   <div id="lista_imagens_masculino"></div>
 
 </body>

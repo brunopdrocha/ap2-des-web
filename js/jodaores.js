@@ -12,8 +12,10 @@ jogadores.forEach(
         /* Adiciona e estiliza a imagem do jogador */
         const img_jogador = document.createElement('img');
         img_jogador.src = ele.imagem;
-        img_jogador.style.width = "95%";
-
+        img_jogador.style.width = "auto";
+        
+      
+       
         // --------------------------------------
 
         /* Adiciona e estiliza o nome do jogador */
@@ -93,13 +95,18 @@ document.getElementById('selecao').addEventListener('change', function () {
    
     if (filtro === 'feminino') {
        imagensMasculino.style.display = 'none';
-       imagensFeminino.style.display = 'block';
+       imagensFeminino.style.display = 'grid';
+       imagensFeminino.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+
     } else if (filtro === 'masculino') {
        imagensFeminino.style.display = 'none';
-       imagensMasculino.style.display = 'block';
+       imagensMasculino.style.display = 'grid';
+       imagensMasculino.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
     } else {
-       imagensFeminino.style.display = 'block';
-       imagensMasculino.style.display = 'block';
+       imagensFeminino.style.display = 'grid';
+       imagensMasculino.style.display = 'grid';
+       imagensFeminino.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+       imagensMasculino.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
     }
    });
 

@@ -29,7 +29,7 @@ h1, h2{
     }
 }
 
-@media (max-width : 720px) {
+@media (max-width : 768px) {
     #lista_imagens_feminino, #lista_imagens_masculino{
         grid-template-columns : 1fr 1fr;  /* Muda a quantidade de jogadores por fileira para 2 */   
         font-size : 8pt; 
@@ -57,6 +57,7 @@ h1, h2{
     text-decoration: none;
     padding: 0.5em 1em;
     cursor: pointer;
+    position: absolute;
 }
 
 #inicio{

@@ -86,11 +86,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const voltar = document.createElement('a');
     voltar.className = "btn_voltar";
     voltar.innerHTML = "Voltar";
-    voltar.href = "./index.html";
+    voltar.href = "home.html";
     voltar.style.textDecoration = "none";
     voltar.style.color = "#ffffff";
     voltar.style.fontSize = "23pt";
-
     // ------------------------------------------
 
     /* 
